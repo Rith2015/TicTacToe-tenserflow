@@ -10,11 +10,18 @@ class TicTacToe:
         for row in self.board:
             print("|".join(symbols[cell] for cell in row))
             print("-"*5)
-    def make_move(self,row,col):
-        if  self.board[row,col]!=0:
+    def make_move(self, row, col):
+        if self.board[row, col] != 0:
+            print("Attempting to make move at:", row, col)
+            print("Board state when the error occurred:")
+            print(self.board)
             raise ValueError('Invalid move!')
-        self.board[row,col]=self.player
-        self.player*=-1
+        self.board[row, col] = self.player
+        print(f"Player {self.player} placed at {row}, {col}")
+        self.player *= -1
+        print("Updated board state:")
+        print(self.board)
+
     
     def check_winner(self):
             for i in range(3):
