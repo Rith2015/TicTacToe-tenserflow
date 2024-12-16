@@ -1,7 +1,7 @@
 import numpy as np
 from game import TicTacToe
 
-def generate_data(num_games=100):
+def generate_data(num_games=1000):
     X, y = [], []
     for _ in range(num_games):
         game = TicTacToe()
